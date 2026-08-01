@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMU Medical Portfolio</title>
+    <meta
+      name="description"
+      content="เว็บไซต์พอร์ตโฟลิโอส่วนตัวสำหรับสมัครเข้าศึกษาต่อคณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cmu: {
+                green: '#1E5631',
+                gold: '#D4AF37',
+                cream: '#F7F5EF',
+                slate: '#F3F4F6',
+              },
+            },
+            fontFamily: {
+              sans: ['Prompt', 'Noto Sans Thai', 'Sarabun', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Prompt', 'Noto Sans Thai', 'Sarabun', sans-serif;
+      }
+
+      .section-title {
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #D4AF37, #1E5631);
+        border-radius: 9999px;
+      }
+    </style>
+  </head>
+  <body class="bg-cmu-cream text-gray-800">
+    <!-- แถบเมนูด้านบน -->
+    <header class="sticky top-0 z-50 border-b border-green-100 bg-white/90 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#home" class="text-lg font-semibold text-cmu-green">CMU Med Applicant</a>
+        <button id="menu-toggle" class="rounded-lg p-2 text-cmu-green md:hidden" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <div id="nav-links" class="hidden items-center gap-6 text-sm font-medium md:flex">
+          <a href="#about" class="transition hover:text-cmu-gold">เกี่ยวกับฉัน</a>
+          <a href="#skills" class="transition hover:text-cmu-gold">ทักษะ</a>
+          <a href="#projects" class="transition hover:text-cmu-gold">ผลงาน</a>
+          <a href="#contact" class="transition hover:text-cmu-gold">ติดต่อ</a>
+        </div>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-green-100 bg-white px-4 py-4 md:hidden">
+        <div class="flex flex-col gap-3 text-sm font-medium">
+          <a href="#about" class="transition hover:text-cmu-gold">เกี่ยวกับฉัน</a>
+          <a href="#skills" class="transition hover:text-cmu-gold">ทักษะ</a>
+          <a href="#projects" class="transition hover:text-cmu-gold">ผลงาน</a>
+          <a href="#contact" class="transition hover:text-cmu-gold">ติดต่อ</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ส่วนต้อนรับ -->
+    <section id="home" class="min-h-screen bg-gradient-to-br from-cmu-green via-emerald-900 to-cmu-green px-4 py-20 text-white sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div class="space-y-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-amber-300">M.D. Candidate @ CMU</p>
+          <h1 class="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">กนกพิชญ์ อ่อนงาม</h1>
+          <p class="max-w-2xl text-lg text-emerald-50 sm:text-xl">
+            มุ่งมั่นสู่การเป็นแพทย์เพื่อชุมชนและสังคม ด้วยความใส่ใจในสุขภาพ ความรับฟัง และการดูแลผู้ป่วยอย่างมีคุณค่า
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href="#projects" class="rounded-full bg-cmu-gold px-6 py-3 text-center font-semibold text-cmu-green transition hover:scale-105">สำรวจผลงานและกิจกรรม</a>
+            <a href="#about" class="rounded-full border border-white/40 px-6 py-3 text-center font-semibold transition hover:bg-white/10">อ่านเรื่องราวของฉัน</a>
+          </div>
+        </div>
+        <div class="rounded-[2rem] border border-white/20 bg-white/10 p-3 shadow-2xl shadow-black/20 backdrop-blur">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+            alt="Student portrait"
+            class="h-[420px] w-full rounded-[1.5rem] object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- แนะนำตัว -->
+    <section id="about" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cmu-green">เกี่ยวกับฉัน</p>
+          <h2 class="section-title text-3xl font-bold text-cmu-green sm:text-4xl">แรงบันดาลใจในการเป็นแพทย์</h2>
+          <p class="mt-6 text-lg leading-8 text-gray-700">
+            ฉันมีความสนใจในด้านสุขภาพและการดูแลผู้คนตั้งแต่ยังเป็นนักเรียน โดยเชื่อว่าความรู้ความสามารถทางวิชาการ
+            ควบคู่กับความเห็นอกเห็นใจและความรับฟัง จะช่วยให้ฉันเป็นแพทย์ที่มีคุณภาพและใกล้ชิดชุมชนได้อย่างแท้จริง
+          </p>
+          <p class="mt-4 text-lg leading-8 text-gray-700">
+            การเรียนรู้ผ่านกิจกรรมจิตอาสา โครงงานวิทยาศาสตร์ และการทำงานร่วมกับผู้อื่น ทำให้ฉันเข้าใจถึงความสำคัญของความอดทน
+            ความเป็นมืออาชีพ และความมุ่งมั่นในการพัฒนาสุขภาพของประชาชนในทุกระดับ
+          </p>
+        </div>
+        <div class="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div class="rounded-xl bg-cmu-slate p-5">
+              <h3 class="font-semibold text-cmu-green">ความเชื่อ</h3>
+              <p class="mt-2 text-gray-700">แพทย์ต้องเป็นผู้ที่มีทั้งความรู้ ความเมตตา และความรับผิดชอบต่อสังคม</p>
+            </div>
+            <div class="rounded-xl bg-cmu-slate p-5">
+              <h3 class="font-semibold text-cmu-green">เป้าหมาย</h3>
+              <p class="mt-2 text-gray-700">พัฒนาความสามารถในการดูแลสุขภาพและสร้างคุณภาพชีวิตให้กับคนรอบข้าง</p>
+            </div>
+            <div class="rounded-xl bg-cmu-slate p-5">
+              <h3 class="font-semibold text-cmu-green">ค่านิยม</h3>
+              <p class="mt-2 text-gray-700">ความซื่อสัตย์ ความใส่ใจต่อผู้อื่น และการเรียนรู้ตลอดชีวิต</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ทักษะและศักยภาพ -->
+    <section id="skills" class="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="text-center">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cmu-green">ทักษะและศักยภาพ</p>
+          <h2 class="section-title text-3xl font-bold text-cmu-green sm:text-4xl">ความสามารถที่พร้อมพัฒนาต่อไป</h2>
+        </div>
+        <div class="mt-12 grid gap-8 lg:grid-cols-2">
+          <div class="rounded-[2rem] border border-gray-200 bg-cmu-cream p-8 shadow-sm">
+            <h3 class="text-xl font-semibold text-cmu-green">วิชาการ</h3>
+            <div class="mt-6 space-y-5">
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span>ชีววิทยา</span><span>90%</span></div>
+                <div class="h-2 rounded-full bg-gray-200"><div class="h-2 w-[90%] rounded-full bg-cmu-green"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span>เคมี</span><span>85%</span></div>
+                <div class="h-2 rounded-full bg-gray-200"><div class="h-2 w-[85%] rounded-full bg-cmu-gold"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span>ภาษาอังกฤษทางการแพทย์</span><span>88%</span></div>
+                <div class="h-2 rounded-full bg-gray-200"><div class="h-2 w-[88%] rounded-full bg-cmu-green"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-sm">
+            <h3 class="text-xl font-semibold text-cmu-green">ทักษะด้านมนุษย์และจิตอาสา</h3>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="rounded-full bg-cmu-green px-4 py-2 text-sm font-medium text-white">Empathy & Active Listening</span>
+              <span class="rounded-full bg-cmu-gold px-4 py-2 text-sm font-medium text-cmu-green">Critical Thinking</span>
+              <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm font-medium text-cmu-green">Teamwork</span>
+              <span class="rounded-full bg-amber-100 px-4 py-2 text-sm font-medium text-cmu-green">Leadership</span>
+              <span class="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-cmu-green">Communication</span>
+            </div>
+            <p class="mt-8 leading-7 text-gray-700">
+              การฝึกฝนจากกิจกรรมต่าง ๆ ช่วยให้ฉันมีความพร้อมทั้งด้านวิชาการและทักษะในการทำงานร่วมกับผู้อื่นอย่างมีประสิทธิภาพ
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ผลงานและกิจกรรม -->
+    <section id="projects" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cmu-green">ผลงาน ผลงานวิจัย และกิจกรรม</p>
+        <h2 class="section-title text-3xl font-bold text-cmu-green sm:text-4xl">ประสบการณ์ที่สะท้อนความตั้งใจ</h2>
+      </div>
+      <div class="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <!-- กิจกรรม 1 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/1E5631/FFFFFF?text=CMU+Camp" alt="ค่ายอยากเป็นหมอ มช." class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">ค่ายอยากเป็นหมอ มช.</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">เข้าร่วมค่ายเพื่อเรียนรู้ชีวิตของแพทย์และฝึกทักษะการสื่อสารกับผู้ป่วยอย่างสร้างสรรค์</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 2 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/D4AF37/1E5631?text=Research+1" alt="โครงงานวิจัยสมุนไพรท้องถิ่น" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">โครงงานวิจัยสมุนไพรท้องถิ่น</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">ศึกษาคุณค่าทางยาและวิธีการนำเสนอข้อมูลวิชาการในรูปแบบที่เข้าใจง่าย</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 3 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/2F855A/FFFFFF?text=Volunteer" alt="กิจกรรมจิตอาสาโรงพยาบาลชุมชน" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">กิจกรรมจิตอาสาโรงพยาบาลชุมชน</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">ช่วยดูแลผู้ป่วยและเรียนรู้ความละเอียดอ่อนในการให้บริการสุขภาพ</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 4 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/6B7280/FFFFFF?text=Science+Fair" alt="งานประกวดโครงงานวิทยาศาสตร์" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">งานประกวดโครงงานวิทยาศาสตร์</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">พัฒนาทักษะการวางแผน การทดลอง และการสื่อสารผลงานให้มีความน่าเชื่อถือ</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 5 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Health+Talk" alt="อบรมความรู้สุขภาพ" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">อบรมให้ความรู้สุขภาพในโรงเรียน</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">ถ่ายทอดความรู้เรื่องโภชนาการและสุขภาพเพื่อสร้างความตระหนักรู้ในชุมชน</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 6 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/92400E/FFFFFF?text=Mentoring" alt="กิจกรรมพี่เลี้ยงนักเรียน" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">กิจกรรมพี่เลี้ยงและให้คำปรึกษานักเรียน</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">ฝึกการเป็นผู้นำและให้กำลังใจเพื่อน ๆ ในสถานการณ์ต่าง ๆ</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 7 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/7C3AED/FFFFFF?text=Library+Program" alt="โครงการอ่านหนังสือเพื่อสุขภาพ" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">โครงการอ่านหนังสือเพื่อสุขภาพจิต</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">สร้างพื้นที่สนับสนุนความรู้และการสื่อสารที่ดีในกลุ่มเพื่อน</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 8 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/2563EB/FFFFFF?text=Community+Care" alt="กิจกรรมดูแลชุมชน" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">กิจกรรมดูแลชุมชนในพื้นที่ใกล้เคียง</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">เรียนรู้การเข้าถึงปัญหาและแนวทางการส่งเสริมสุขภาพอย่างยั่งยืน</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 9 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/1D4ED8/FFFFFF?text=Medical+Expo" alt="งานแสดงความรู้ทางการแพทย์" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">งานแสดงความรู้ทางการแพทย์</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">นำเสนอข้อมูลเชิงวิชาการให้ผู้เข้าร่วมเข้าใจง่ายและสร้างแรงบันดาลใจ</p>
+          </div>
+        </article>
+        <!-- กิจกรรม 10 -->
+        <article class="overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <img src="https://placehold.co/600x400/BE185D/FFFFFF?text=Learning+Camp" alt="ค่ายเรียนรู้และพัฒนาตนเอง" class="h-44 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-cmu-green">ค่ายเรียนรู้และพัฒนาตนเอง</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-700">เรียนรู้การบริหารเวลา การวางเป้าหมาย และการเติบโตต่อเนื่องสู่การเป็นผู้ใหญ่ที่รับผิดชอบ</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ติดต่อและส่วนท้าย -->
+    <section id="contact" class="bg-cmu-green px-4 py-20 text-white sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl rounded-[2rem] border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-300">ติดต่อ</p>
+            <h2 class="text-3xl font-bold sm:text-4xl">พร้อมแลกเปลี่ยนความรู้และประสบการณ์</h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-emerald-50">
+              หากต้องการติดต่อเพื่อสอบถามข้อมูลเพิ่มเติม หรือขอแลกเปลี่ยนแนวคิดด้านการศึกษาและการพัฒนาตัวเองฉันยินดีเสมอ
+            </p>
+          </div>
+          <div class="rounded-[1.5rem] bg-white p-6 text-gray-800">
+            <ul class="space-y-4 text-sm sm:text-base">
+              <li><span class="font-semibold text-cmu-green">อีเมล:</span> applicant@example.com</li>
+              <li><span class="font-semibold text-cmu-green">เบอร์โทร:</span> 09-1234-5678</li>
+              <li><span class="font-semibold text-cmu-green">LINE ID:</span> cmu.med.applicant</li>
+              <li><span class="font-semibold text-cmu-green">Social:</span> Facebook / Instagram / LinkedIn</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#0f2c1b] px-4 py-6 text-center text-sm text-emerald-100 sm:px-6 lg:px-8">
+      <p>Copyright © 2026 กนกพิชญ์ อ่อนงาม - Pre-Med Portfolio CMU</p>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('#mobile-menu a, #nav-links a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>

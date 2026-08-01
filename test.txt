@@ -1,0 +1,244 @@
+1. output
+Command: cat /proc/cpuinfo | grep Serial
+
+2. output
+Command: cat /proc/cpuinfo | grep Revision
+
+3. output
+Command: cat /sys/class/net/eth0/address
+70:a8:a5:72:b2:db
+
+4. output
+Command: cat /sys/class/net/wlan0/address
+cat: /sys/class/net/wlan0/address: No such file or directory
+
+5. output
+Command: hostname -I
+10.0.11.134 172.17.0.1 
+
+6. output
+Command: hostname
+codespaces-57a768
+
+7. output
+Command: uname -r
+6.8.0-1052-azure
+
+8. output
+Command: cat /proc/device-tree/model
+cat: /proc/device-tree/model: No such file or directory
+
+9. output
+Command: uptime -p
+up 54 minutes
+
+10. output
+Command: date
+Sat Aug  1 16:55:16 UTC 2026
+
+11. output
+Command: pwd
+/workspaces/M33_Iot/05693
+
+12. output
+Command: mkdir 05693
+mkdir: cannot create directory ‘05693’: File exists
+
+13. output
+Command: cd 05693 && pwd
+/workspaces/M33_Iot/05693/05693
+
+14. output
+Command: touch my_bio.txt && ls
+05693
+my_bio.txt
+
+15. output
+Command: echo "Kanokpich Orngam" > my_bio.txt
+
+16. output
+Command: cat my_bio.txt
+Kanokpich Orngam
+
+17. output
+Command: ls -lh my_bio.txt
+-rw-rw-rw- 1 codespace codespace 17 Aug  1 16:55 my_bio.txt
+
+18. output
+Command: cp my_bio.txt backup_bio.txt && ls
+05693
+backup_bio.txt
+my_bio.txt
+
+19. output
+Command: mv backup_bio.txt amy.txt
+
+20. output
+Command: rm my_bio.txt && ls
+05693
+amy.txt
+
+21. output
+Command: vcgencmd measure_temp
+/bin/sh: 1: vcgencmd: not found
+
+22. output
+Command: vcgencmd measure_clock arm
+/bin/sh: 1: vcgencmd: not found
+
+23. output
+Command: free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       2.7Gi       191Mi        64Mi       5.3Gi       5.1Gi
+Swap:             0B          0B          0B
+
+24. output
+Command: df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G  9.7G   21G  33% /
+
+25. output
+Command: vcgencmd measure_volts core
+/bin/sh: 1: vcgencmd: not found
+
+26. output
+Command: whoami
+codespace
+
+27. output
+Command: id
+uid=1000(codespace) gid=1000(codespace) groups=1000(codespace),985(pipx),986(python),987(oryx),988(golang),989(docker),990(sdkman),991(rvm),992(php),993(conda),994(nvs),995(nvm),996(hugo),1001(ssh)
+
+28. output
+Command: touch secret.txt && ls -l secret.txt
+-rw-rw-rw- 1 codespace codespace 0 Aug  1 16:55 secret.txt
+
+29. output
+Command: chmod 444 secret.txt
+
+30. output
+Command: rm secret.txt
+
+31. output
+Command: ps -aux --sort=-%cpu | head -n 2
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+codespa+   25245 17.8  0.1  19076 13116 pts/1    S+   16:55   0:00 python3 -
+
+32. output
+Command: ps -e | wc -l
+28
+
+33. output
+Command: md5sum amy.txt
+66680767fb958086f9e0a26da9f2480b  amy.txt
+
+34. output
+Command: history | tail -n 5
+/bin/sh: 1: history: not found
+
+35. output
+Command: ping -c 3 google.com
+/bin/sh: 1: ping: not found
+
+36. output
+Command: lsusb
+/bin/sh: 1: lsusb: not found
+
+37. output
+Command: python3 --version
+Python 3.12.1
+
+38. output
+Command: mkdir test_rm && rm -r test_rm
+
+39. output
+Command: timeout 3s top -b -n 1 | head -n 20
+top - 16:55:17 up 54 min,  0 user,  load average: 0.77, 0.59, 0.57
+Tasks:  28 total,   1 running,  27 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 36.8 us, 36.8 sy,  0.0 ni, 26.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7944.5 total,    189.5 free,   2737.0 used,   5397.4 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5207.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 codespa+  20   0    1136    808    756 S   0.0   0.0   0:00.13 docker-+
+      7 codespa+  20   0    2800   1748   1636 S   0.0   0.0   0:00.74 sh
+     34 root      20   0   12020   2968   1828 S   0.0   0.0   0:00.00 sshd
+     57 root      20   0 2033136  91020  63440 S   0.0   1.1   0:00.48 dockerd
+     71 root      20   0 1803876  55328  36996 S   0.0   0.7   0:01.09 contain+
+    357 codespa+  20   0    2800   1936   1820 S   0.0   0.0   0:00.00 sh
+    378 root      20   0    2800   1908   1792 S   0.0   0.0   0:00.00 sh
+    562 codespa+  20   0    2808   1836   1724 S   0.0   0.0   0:00.00 sh
+    571 codespa+  20   0 1840848 197696  53444 S   0.0   2.4   0:08.38 MainThr+
+   1075 codespa+  20   0 1601288  74228  49116 S   0.0   0.9   0:02.90 MainThr+
+   1159 codespa+  20   0    2800   1840   1724 S   0.0   0.0   0:00.01 sh
+   1196 root      20   0    2800   1952   1844 S   0.0   0.0   0:00.00 sh
+   1435 codespa+  20   0   15964  12288   3688 S   0.0   0.2   0:00.14 bash
+
+40. output
+Command: echo "Hello RPi" | wc -w
+2
+
+41. output
+Command: seq 5 > numbers.txt
+
+42. output
+Command: cat numbers.txt
+1
+2
+3
+4
+5
+
+43. output
+Command: seq 6 10 >> numbers.txt
+
+44. output
+Command: wc -l numbers.txt
+10 numbers.txt
+
+45. output
+Command: grep "3" numbers.txt
+3
+
+46. output
+Command: head -n 3 numbers.txt
+1
+2
+3
+
+47. output
+Command: tail -n 2 numbers.txt
+9
+10
+
+48. output
+Command: hello
+/bin/sh: 1: hello: not found
+
+49. output
+Command: timeout 5s env MANPAGER=cat man ls | head -n 20
+LS(1)                            User Commands                           LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List  information  about  the FILEs (the current directory by default).
+       Sort entries alphabetically if none of -cftuvSUX nor --sort  is  speci‐
+       fied.
+
+       Mandatory  arguments  to  long  options are mandatory for short options
+       too.
+
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+
+50. output
+Command: echo "ยาก"
+ยาก
+
